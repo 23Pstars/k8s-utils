@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher
+  labels:
+    app: rancher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher
+  template:
+    metadata:
+      labels:
+        app: rancher
+    spec:
+      containers:
+      - name: rancher
+        image: rancher/server
+        ports:
+        - containerPort: 80
+          hostPort: 8002
+        env:
+        - name: CATTLE_BOOTSTRAP_PASSWORD
+          value: mysecretpassword
+        - name: CATTLE_SYSTEM_CATALOG
+          value: "library"
+
