@@ -19,10 +19,9 @@ spec:
         image: rancher/server
         ports:
         - containerPort: 80
-          hostPort: 8002
+          hostPort: 30083
         env:
         - name: CATTLE_BOOTSTRAP_PASSWORD
-          value: mysecretpassword
+          value: 7H4a9CYeixYDrKCJ
         - name: CATTLE_SYSTEM_CATALOG
           value: "library"
-

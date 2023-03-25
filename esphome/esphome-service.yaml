@@ -9,4 +9,6 @@ spec:
   - name: esphome
     port: 6053
     targetPort: 6053
+    nodePort: 30082
+  type: NodePort
 
