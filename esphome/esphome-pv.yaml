@@ -8,4 +8,4 @@ spec:
   capacity:
     storage: 1Gi
   hostPath:
-    path: /home/pi/k8s/esphome/config
+    path: /home/zaf/esphome/config
