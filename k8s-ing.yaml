@@ -14,8 +14,3 @@ spec:
             name: hello-world-svc
             port:
               name: http
-
-  ports:
-  - name: http
-    port: 30000
-    targetPort: http
