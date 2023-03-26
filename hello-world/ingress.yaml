@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-world
+  name: hello-world-ing
 spec:
   rules:
-  - host: hello-world.rpi4.lrsoft.local
+  - host: hello-world-k8s.lrsoft.id
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: hello-world
+            name: hello-world-svc
             port:
               name: tcp
