@@ -6,9 +6,10 @@ spec:
   selector:
     app: esphome
   ports:
-  - name: esphome
-    port: 6053
-    targetPort: 6053
-    nodePort: 30082
+    - protocol: TCP
+      name: esphome
+      port: 6053
+      targetPort: 6053
+      nodePort: 30082
   type: NodePort
 
