@@ -21,7 +21,7 @@ spec:
         - name: esphome-config
           mountPath: /config
         ports:
-        - containerPort: 6053
+        - containerPort: 6052
       volumes:
       - name: esphome-config
         persistentVolumeClaim:

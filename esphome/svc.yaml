@@ -8,8 +8,8 @@ spec:
   ports:
     - protocol: TCP
       name: esphome
-      port: 6053
-      targetPort: 6053
+      port: 6052
+      targetPort: 6052
       nodePort: 30082
   type: NodePort
 
