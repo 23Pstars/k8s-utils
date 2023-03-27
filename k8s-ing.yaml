@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: k8s-ing
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: k8s.lrsoft.id
@@ -10,7 +12,5 @@ spec:
       - path: /hello-world
         pathType: Prefix
         backend:
-          service:
-            name: hello-world-svc
-            port:
-              name: http
+          serviceName: hello-world-svc
+          servicePort: 8080
