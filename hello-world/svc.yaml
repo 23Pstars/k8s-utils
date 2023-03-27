@@ -6,7 +6,7 @@ spec:
   selector:
     app: hello-world
   ports:
-  - name: hello-world
+  - name: http
     protocol: TCP
     port: 8080
     targetPort: 8080
