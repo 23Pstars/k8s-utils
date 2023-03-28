@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-ing-traefik
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+  - host: k8s.lrsoft.id
+    http:
+      paths:
+      - path: /esphome
+        pathType: Prefix
+        backend:
+          service:
+            name: esphome-svc
+            port:
+              name: esphome
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: k8s-middleware
+spec:
+  stripPrefix:
+    prefixes:
+    - /esphome
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: k8s-ing-traefik
+spec:
+  entryPoints:
+  - web
+  routes:
+  - match: Host(`k8s.lrsoft.id`) && PathPrefix(`/esphome`)
+    kind: Rule
+    middlewares:
+    - name: k8s-middleware
+    services:
+    - name: esphome-svc
+      port: esphome
