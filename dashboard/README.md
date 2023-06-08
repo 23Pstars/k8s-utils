@@ -6,9 +6,9 @@ kubectl proxy --port=30080 --address 0.0.0.0 --accept-hosts '.*'
 kubectl proxy --port=30080 --address 0.0.0.0 --accept-hosts '.*' >/dev/null 2>&1 &
 
 ## Access
-https://dash-gigabyte-k8s.lrsoft.id/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+https://gb-dash-k8s.lrsoft.id/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
-https://dash-rpi4-k8s.lrsoft.id/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+https://rpi4-dash-k8s.lrsoft.id/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 ## Account
 kubectl apply -f sa.yaml
